@@ -5,12 +5,9 @@ import time
 
 
 
-response_dict2 = {"hey": "yes ;) my snap is morgan_t18",
-                 "bet": "bet my snap is morgan_t18 :)",
-                 "m": "age? my snap is morgan_t18 :)",
-                 "no": ":(",
-                 "yes ya yeah maybe snap": "add me snap is morgan_t18 :)"}
-DEFAULT_RESPONSE = 'hey'
+response_dict2 = {"hey": "What's up",
+                }
+DEFAULT_RESPONSE = "hey"
 
 class OmegleBot:
 
@@ -92,9 +89,9 @@ class OmegleBot:
             pass
 
     def search_responses(self, response):
-        for key in response_dict:
+        for key in response_dict2:
             if response in key:
-                return response_dict[key]
+                return response_dict2[key]
         return DEFAULT_RESPONSE
 
     def check_stop_button(self):
@@ -117,15 +114,12 @@ class OmegleBot:
         else:
             return False
 
-morgan = "morgan_t18"
-shae = "scawley97"
 
-message = "I'm F22 selling nudes and videos my snap is " + morgan + " ;) "
 
-# while
-# if j % 2 == 0:
-#     bot = OmegleBot("I'm F22 selling nudes and videos my snap is " + morgan + " ;) ")
-bot = OmegleBot(message)
+message1 = "message here"
+
+
+bot = OmegleBot(message1)
 
 bot.logon()  # starts initial chat
 time.sleep(1)
@@ -139,7 +133,7 @@ while True:
     if responded:
         reply_with = bot.search_responses(message)
         bot.reply(reply_with)
-        time.sleep(1)
+        time.sleep(2)
     bot.stop_chat()  # stops chat if stranger didn't
     time.sleep(1)
     bot.new_chat()  # starts new chat
